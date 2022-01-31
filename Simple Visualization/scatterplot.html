@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scatterplot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="scatterplot.js" async></script>
+</head>
+<body>
+    <h1>Scatterplot</h1>
+    <form>
+        <button formaction="index.html">back to the index</button>
+    </form>
+
+    <div class="container">
+        <div id = "display"></div>
+        <div class = "choices">
+            Variable for x:
+            <input type="radio" name="x" value ="population">Population
+            <input type="radio" name="x" value ="birthPer1000">birthPer1000
+            <input type="radio" name="x" value ="deathPer1000">deathPer1000
+            <input type="radio" name="x" value ="GDPPerCapita">GDP per capita
+            <input type="radio" name="x" value ="inflationRate">Inflation Rate
+            <input type="radio" name="x" value ="militaryExpenditures">military Expenditures
+            <input type="radio" name="x" value ="GDPGrowthRate">GDP growth rate
+            <input type="radio" name="x" value ="laborForce">Labor force
+
+            <br>
+
+            Variable for y:
+            <input type="radio" name="y" value ="population">Population
+            <input type="radio" name="y" value ="birthPer1000">birthPer1000
+            <input type="radio" name="y" value ="deathPer1000">deathPer1000
+            <input type="radio" name="y" value ="GDPPerCapita">GDP per capita
+            <input type="radio" name="y" value ="inflationRate">Inflation Rate
+            <input type="radio" name="y" value ="militaryExpenditures">military Expenditures
+            <input type="radio" name="y" value ="GDPGrowthRate">GDP growth rate
+            <input type="radio" name="y" value ="laborForce">Labor force
+
+            <br>
+           <button onclick="create()">Enter</button>
+        <FORM>
+            <p id = "result"></p>
+        </FORM>
+        </div>
+        <svg width="800" height="500"></svg>
+    </div>
+</body>
+</html>

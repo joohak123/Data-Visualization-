@@ -1,0 +1,33 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bar Chart</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="barChart.js" async></script>
+    </head>
+    <body>
+        <h1>Bar Chart</h1>
+        <form>
+            <button formaction="index.html">back to the index</button>
+        </form>
+        <div class="container">
+            <div id = "display"></div>
+            <div class = "dropdown">
+               <label for="chart">Choose a variable type (it will categorize per region and produce a bar chart):</label>
+               <select name="chart" id="chart">
+                   <option value="population">Population</option>
+                   <option value="birthPer1000">Birth Per 1000</option>
+                   <option value="deathPer1000">Death Per 1000</option>
+                   <option value="GDPPerCapita">GDP Per Capita</option>
+                   <option value="inflationRate">Inflation Rate</option>
+                   <option value="GDPPurchasePower">GDP Purchase Power</option>
+                   <option value="GDPGrowthRate">GDP Growth Rate</option>
+                   <option value="laborForce">Labor force</option>
+               </select>
+               <button onclick="create()">Enter</button>
+            </div>
+            <svg width="1100" height="500"></svg>
+            <p id = "result"></p>
+        </div>
+    </body>   
+</html>

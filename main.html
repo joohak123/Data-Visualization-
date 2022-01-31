@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="driver.js" async></script>
+</head>
+<style>
+
+  svg {
+    font: 10px sans-serif;
+    padding: 10px;
+  }
+  .tooltip {
+     position: absolute;
+     text-align: center;
+     background: #FFFFFF;
+     color: #313639;
+     border: 1px solid #313639;
+     border-radius: 10px; 
+     font-size: 1.3rem;
+}
+
+.chart{
+    width:5px;
+    height:100v;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr  ;
+    grid-template-areas: 
+    "box1 box2 legend1"
+    "box3 box4 legend2";
+}
+
+.chart1{
+    grid-area: box1;
+}
+.chart2{
+    grid-area: box2;
+}
+.chart3{
+    grid-area: box3;
+}
+.chart4{
+    grid-area: box4;
+}
+.chart5{
+    grid-area: legend1;
+}
+.chart6{
+    grid-area: legend2;
+}
+
+</style>
+<body onload = "create()">
+
+    <div class="chart">
+      <!--chart1-->
+      <div class="chart1">
+          <div id="legend1" height="160" width="200"></div>
+      </div>
+      <!--chart2-->
+      <div class="chart2">
+        <div id="legend2" height="160" width="200"></div>
+      </div>
+      <!--chart3-->
+      <div class="chart3">
+        <div id="legend3" height="160" width="200"></div>
+      </div>
+      <!--chart4-->
+      <div class="chart4">
+        <div id="legend4" ></div>
+      </div>
+      <div class="chart5">
+        <div id="legend5" ></div>
+      </div>
+      <div class="chart6">
+        <div id="legend6" ></div>
+      </div>
+  </div>
+</body>
+</html>

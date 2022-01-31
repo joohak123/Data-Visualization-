@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="correlationMatrix.js" async></script>
+</head>
+<style>
+
+  svg {
+    font: 10px sans-serif;
+    padding: 10px;
+  }
+
+  .axis,
+  .frame {
+    shape-rendering: crispEdges;
+  }
+
+  .axis line {
+    stroke: #ddd;
+  }
+
+  .axis path {
+    display: none;
+  }
+
+  .cell text {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .frame {
+    fill: none;
+    stroke: #aaa;
+  }
+
+  circle {
+    fill-opacity: .7;
+  }
+
+</style>
+<body>
+    <h1>Main Page</h1>
+    <script>
+      window.onload = function(){
+        document.getElementById("a").onclick = function(){
+            var firstScript = document.getElementsByTagName('script')[1]; //get first script
+            document.getElementsByTagName('head')[0].removeChild(firstScript); //removing it from DOM <head> tag
+            var secondScript = document.createElement('script'); //creating another script
+            let choice = document.getElementById("chart").value
+            if(choice == "correlation"){  // 1: corr
+              secondScript.src = "correlationMatrix.js";
+            }
+            else if (choice == "scatter"){ // 2: scatter
+              secondScript.src = "scatterplotMatrix.js";
+            }
+            else if (choice == "parallel"){ // 3: parallel
+              secondScript.src = "parallelCoordinate.js";
+            }
+            else if (choice == "pca"){ // 4 : pca
+              secondScript.src = "pcaPlot.js";
+            }
+            else if (choice == "biplot"){ // 5 : biplot
+              secondScript.src = "biplot.js";
+            }
+            else if (choice == "mdsData"){// 6: mdsData
+              secondScript.src = "MDSData.js";
+            }
+            else if (choice == "mdscorr"){ // 7: mdsCorr
+              secondScript.src = "MDSVariablePlot.js";
+            }
+
+            document.getElementsByTagName('head')[0].appendChild(secondScript); //adding script to DOM  
+            
+          }
+      };
+    </script>
+    <divv class = "choices">
+      <select name = "chart" id = "chart">
+        <option value = "correlation">Correlation Matrix</option>
+        <option value = "scatter"> Scatter Plot Matrix</option>
+        <option value = "parallel">Parallel Coordinate</option>
+        <option value = "pca">PCA plot</option>
+        <option value = "biplot">biPlot</option>
+        <option value = "mdsData"> mds Data</option>
+        <option value = "mdscorr"> MDS dispaly by the attributes</option>
+
+      </select>
+  
+    </divv>
+    <div class = "container">
+      <button id = "a"> Change Graph Type</button>
+        <button id = "a" onclick="create()"> Run </button>
+    </div>
+  
+    <div style="display:inline-block;" id="grid"></div>
+    <div style="display:inline-block;" id="legend2"></div>
+    <div style="display:inline-block;" id="legend"></div>
+</body>
+</html>

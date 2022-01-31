@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content = "width=device-width, intial-scale1.0">
+        <title>hello world</title>
+    </head>
+    <body>
+        <h1>Home Page (index)</h1>
+        <!-- <script type="text/javascript">
+        // Your beautiful D3 code will go here
+        </script> -->
+         <div class="container">
+             <div id = "display"></div>
+             <div class = "dropdown">
+                <p>Choosing a type will send you to the respective chart page</p>
+                <label for="chart">Choose a chart type:</label>
+                <select name="chart" id="chart">
+                    <option value="pie">Pie Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="scatterplot">ScatterPlot</option>
+                </select>
+                <button onclick="button()">Enter</button>
+             </div>
+             <p id = "result"></p>
+         </div>
+         <script src="index.js">
+        </script>
+    </body>   
+</html>
